@@ -69,26 +69,53 @@ void showArray(int[] array)
     Console.WriteLine();
 }
 
-Console.WriteLine("Input a quantity of numbers:");
-int userSize = Convert.ToInt32(Console.ReadLine());
+int checkNumberOrSymbol (bool checkValue, int number)
+{
+    while (checkValue == false)
+    {
+        Console.WriteLine("It is not a number. Input a number, please.");
+        checkValue = int.TryParse(Console.ReadLine(), out number);
+    }
+    return number;
+}
 
+Console.WriteLine("Input a quantity of numbers:");
+int userSize;
+bool userSizeCheck = int.TryParse(Console.ReadLine(), out userSize);
+checkNumberOrSymbol (userSizeCheck, userSize);
+if (userSize == 0)
+    while (userSize == 0)
+        {
+            Console.WriteLine("It's impossible to create a massive without a value. Please, input a concrete number.");
+            userSizeCheck = int.TryParse(Console.ReadLine(), out userSize);
+            userSize = checkNumberOrSymbol (userSizeCheck, userSize);
+            if (userSize > 0) { break; }
+        }       
 if (userSize < 0)
-{
-    Console.WriteLine("It's impossible to create a massive with negative value of numbers. Your entered value will be converted to a positive number.");
-    userSize *= -1;
-    Console.WriteLine($"The quantity of numbers is: {userSize}");
-}
-else if (userSize == 0)
-{
-    Console.WriteLine("It's impossible to create a massive without a value. Please, input a concrete number.");
-}
+    {
+        Console.WriteLine("It's impossible to create a massive with negative value of numbers. Your entered value will be converted to a positive number.");
+        userSize *= -1;
+        Console.WriteLine($"The quantity of numbers is: {userSize}");
+    }
 
 Console.WriteLine("Input a minimal random number:");
-int minimalNumber = Convert.ToInt32(Console.ReadLine());
+int minimalNumber;
+bool minimalNumberCheck = int.TryParse(Console.ReadLine(), out minimalNumber);
+checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
 
 Console.WriteLine("Input a maximal random number:");
-int maximalNumber = Convert.ToInt32(Console.ReadLine());
+int maximalNumber;
+bool maximalNumberCheck = int.TryParse(Console.ReadLine(), out maximalNumber);
+checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
 
-int[] userArray = createArray (userSize, minimalNumber, maximalNumber);
-showArray (userArray);
+if (minimalNumber > maximalNumber)
+{
+    Console.WriteLine("The minimal number cannot be greater than the maximal number. Try again.");
+}
+else
+{
+    int[] userArray = createArray (userSize, minimalNumber, maximalNumber);
+    showArray (userArray);
+}
 */
+
