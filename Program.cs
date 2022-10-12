@@ -48,7 +48,7 @@ Console.WriteLine($"The sum of figures is: {Sum (userNumber)}");
 */
 
 // Задача 3. Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
-
+/*
 int[] createArray (int size, int min, int max)
 {
     int[] newArray = new int[size];
@@ -79,3 +79,4 @@ int maximalNumber = Convert.ToInt32(Console.ReadLine());
 
 int[] userArray = createArray (userSize, minimalNumber, maximalNumber);
 showArray (userArray);
+*/
