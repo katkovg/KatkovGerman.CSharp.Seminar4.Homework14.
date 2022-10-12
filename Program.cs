@@ -72,8 +72,20 @@ void showArray(int[] array)
 Console.WriteLine("Input a quantity of numbers:");
 int userSize = Convert.ToInt32(Console.ReadLine());
 
+if (userSize < 0)
+{
+    Console.WriteLine("It's impossible to create a massive with negative value of numbers. Your entered value will be converted to a positive number.");
+    userSize *= -1;
+    Console.WriteLine($"The quantity of numbers is: {userSize}");
+}
+else if (userSize == 0)
+{
+    Console.WriteLine("It's impossible to create a massive without a value. Please, input a concrete number.");
+}
+
 Console.WriteLine("Input a minimal random number:");
 int minimalNumber = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Input a maximal random number:");
 int maximalNumber = Convert.ToInt32(Console.ReadLine());
 
