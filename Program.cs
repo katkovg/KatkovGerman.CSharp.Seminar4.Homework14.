@@ -101,12 +101,12 @@ if (userSize < 0)
 Console.WriteLine("Input a minimal random number:");
 int minimalNumber;
 bool minimalNumberCheck = int.TryParse(Console.ReadLine(), out minimalNumber);
-checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
+minimalNumber = checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
 
 Console.WriteLine("Input a maximal random number:");
 int maximalNumber;
 bool maximalNumberCheck = int.TryParse(Console.ReadLine(), out maximalNumber);
-checkNumberOrSymbol (maximalNumberCheck, maximalNumber);
+maximalNumber = checkNumberOrSymbol (maximalNumberCheck, maximalNumber);
 
 if (minimalNumber > maximalNumber)
 {
