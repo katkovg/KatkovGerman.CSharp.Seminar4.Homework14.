@@ -48,7 +48,7 @@ Console.WriteLine($"The sum of figures is: {Sum (userNumber)}");
 */
 
 // Задача 3. Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
-/*
+
 int[] createArray (int size, int min, int max)
 {
     int[] newArray = new int[size];
@@ -106,7 +106,7 @@ checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
 Console.WriteLine("Input a maximal random number:");
 int maximalNumber;
 bool maximalNumberCheck = int.TryParse(Console.ReadLine(), out maximalNumber);
-checkNumberOrSymbol (minimalNumberCheck, minimalNumber);
+checkNumberOrSymbol (maximalNumberCheck, maximalNumber);
 
 if (minimalNumber > maximalNumber)
 {
@@ -117,5 +117,4 @@ else
     int[] userArray = createArray (userSize, minimalNumber, maximalNumber);
     showArray (userArray);
 }
-*/
 
